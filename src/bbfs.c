@@ -882,10 +882,6 @@ int main(int argc, char *argv[])
     // and refuse if it is.  The somewhat smaller hole of an ordinary
     // user doing it with the allow_other flag is still there because
     // I don't want to parse the options string.
-    if ((getuid() == 0) || (geteuid() == 0)) {
-    	fprintf(stderr, "Running BBFS as root opens unnacceptable security holes\n");
-    	return 1;
-    }
 
     // See which version of fuse we're running
     fprintf(stderr, "Fuse library version %d.%d\n", FUSE_MAJOR_VERSION, FUSE_MINOR_VERSION);
